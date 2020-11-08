@@ -34,5 +34,5 @@ else
     args="${args} --join=127.0.0.1:8000"
 fi
 
-./hashiconf-raft ${args}
+./my-raft ${args}
 
