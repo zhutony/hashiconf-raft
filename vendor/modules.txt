@@ -1,0 +1,52 @@
+# github.com/armon/go-metrics v0.0.0-20171117184120-7aa49fde8082
+## explicit
+github.com/armon/go-metrics
+# github.com/boltdb/bolt v1.3.1
+## explicit
+github.com/boltdb/bolt
+# github.com/hashicorp/errwrap v0.0.0-20141028054710-7554cd9344ce
+## explicit
+github.com/hashicorp/errwrap
+# github.com/hashicorp/go-immutable-radix v0.0.0-20170725221215-8aac27015308
+## explicit
+github.com/hashicorp/go-immutable-radix
+# github.com/hashicorp/go-msgpack v0.0.0-20150518234257-fa3f63826f7c
+## explicit
+github.com/hashicorp/go-msgpack/codec
+# github.com/hashicorp/go-multierror v0.0.0-20171204182908-b7773ae21874
+## explicit
+github.com/hashicorp/go-multierror
+# github.com/hashicorp/go-sockaddr v0.0.0-20171030104312-9b4c5fa5b10a
+## explicit
+github.com/hashicorp/go-sockaddr
+github.com/hashicorp/go-sockaddr/template
+# github.com/hashicorp/golang-lru v0.0.0-20160813221303-0a025b7e63ad
+## explicit
+github.com/hashicorp/golang-lru/simplelru
+# github.com/hashicorp/raft v1.0.0
+## explicit
+github.com/hashicorp/raft
+# github.com/hashicorp/raft-boltdb v0.0.0-20171010151810-6e5ba93211ea
+## explicit
+github.com/hashicorp/raft-boltdb
+# github.com/justinas/alice v0.0.0-20171023064455-03f45bd4b7da
+## explicit
+github.com/justinas/alice
+# github.com/ogier/pflag v0.0.1
+## explicit
+github.com/ogier/pflag
+# github.com/rs/xid v0.0.0-20170604230408-02dd45c33376
+## explicit
+github.com/rs/xid
+# github.com/rs/zerolog v1.3.0
+## explicit
+github.com/rs/zerolog
+github.com/rs/zerolog/hlog
+github.com/rs/zerolog/internal/json
+github.com/rs/zerolog/log
+# github.com/zenazn/goji v0.9.1-0.20160507202103-64eb34159fe5
+## explicit
+github.com/zenazn/goji/web/mutil
+# golang.org/x/sys v0.0.0-20171222143536-83801418e1b5
+## explicit
+golang.org/x/sys/unix
