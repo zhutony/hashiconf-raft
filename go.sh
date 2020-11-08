@@ -6,3 +6,5 @@ go build main.go
 
 curl -d @testevent.json localhost:8000/key
 curl localhost:8000/key
+curl localhost:8001/key
+curl localhost:8002/key
