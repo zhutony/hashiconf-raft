@@ -52,6 +52,8 @@ func (server *httpServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		server.handleStats(w, r)
 	} else if strings.Contains(r.URL.Path, "/servers") {
 		server.handleServers(w, r)
+	} else if strings.Contains(r.URL.Path, "/leader") {
+		server.handleLeader(w, r)
 	} else {
 		w.WriteHeader(http.StatusBadRequest)
 	}
@@ -152,10 +154,25 @@ func (server *httpServer) handleStats(w http.ResponseWriter, r *http.Request) {
 
 func (server *httpServer) handleServers(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
-
-	responseBytes, err := json.Marshal(server.node.raftNode.GetConfiguration())
+	conf := server.node.raftNode.GetConfiguration()
+	if err := conf.Error(); err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	responseBytes, err := json.Marshal(conf.Configuration())
 	if err != nil {
 		server.logger.Error().Err(err).Msg("Failed to get servers.")
+	}
+
+	w.Write(responseBytes)
+}
+
+func (server *httpServer) handleLeader(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusOK)
+
+	responseBytes, err := json.Marshal(server.node.raftNode.Leader())
+	if err != nil {
+		server.logger.Error().Err(err).Msg("Failed to get the leader.")
 	}
 
 	w.Write(responseBytes)
