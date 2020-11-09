@@ -1,4 +1,5 @@
-go build main.go
+# go build main.go
+go build
 
 ./run-node.sh 1 &
 ./run-node.sh 2 &

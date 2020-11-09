@@ -5,10 +5,11 @@ import (
 	"net"
 	"path/filepath"
 
+	"os"
+
 	multierror "github.com/hashicorp/go-multierror"
 	template "github.com/hashicorp/go-sockaddr/template"
 	flag "github.com/ogier/pflag"
-	"os"
 )
 
 type RawConfig struct {

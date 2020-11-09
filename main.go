@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"io"
-	stdlog "log"
 	"net"
 	"net/http"
 	"net/url"
@@ -12,7 +11,7 @@ import (
 	"time"
 
 	"github.com/hashicorp/raft"
-	"github.com/hashicorp/raft-boltdb"
+	raftboltdb "github.com/hashicorp/raft-boltdb"
 	"github.com/rs/zerolog"
 )
 
@@ -100,7 +99,7 @@ func NewNode(config *Config, log *zerolog.Logger) (*node, error) {
 
 	raftConfig := raft.DefaultConfig()
 	raftConfig.LocalID = raft.ServerID(config.RaftAddress.String())
-	raftConfig.Logger = stdlog.New(log, "", 0)
+	// raftConfig.Logger = stdlog.New(log, "", 0)
 	transportLogger := log.With().Str("component", "raft-transport").Logger()
 	transport, err := raftTransport(config.RaftAddress, transportLogger)
 	if err != nil {
